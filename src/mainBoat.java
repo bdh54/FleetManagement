@@ -153,7 +153,9 @@ public class mainBoat implements Serializable {
         }
 
     public static void exit(ArrayList<Boat> boatStorage) {
+
         saveBoatFile(boatStorage);
+
         System.out.println("\nExiting the Fleet Management System");
         System.exit(0);
     }

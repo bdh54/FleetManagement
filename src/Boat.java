@@ -7,12 +7,12 @@ public class Boat implements Serializable {
 
     protected enum BoatEnum {SAILING, POWER}
     BoatEnum boatStyle;
-    protected String boatName;
-    protected int yearMade;
-    protected String makeModel;
-    protected int boatLength;
-    protected double purchasePrice;
-    protected double maintenancePrice;
+    private String boatName;
+    private int yearMade;
+    private String makeModel;
+    private int boatLength;
+    private double purchasePrice;
+    private double maintenancePrice;
 
     public Boat() {
         boatStyle = null;
