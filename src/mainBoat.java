@@ -160,7 +160,7 @@ public class mainBoat implements Serializable {
         System.exit(0);
     }
 
-    public static boolean saveBoatFile(ArrayList<Boat> boatStorage) {
+    public static void saveBoatFile(ArrayList<Boat> boatStorage) {
 
         ObjectOutputStream toStream = null;
         int index;
@@ -170,22 +170,20 @@ public class mainBoat implements Serializable {
             for (index = 0; index < boatStorage.size();  index++) {
                     toStream.writeObject(boatStorage.get(index));
             }
-            return(true);
         } catch (IOException e) {
             System.out.println(e.getMessage());
-            return(false);
+
         } finally {
             if (toStream != null) {
                 try {
                     toStream.close();
                 } catch (IOException e) {
                     System.out.println(e.getMessage());
-                    return (false);
                 }
             }
         }
     }
-    public static boolean loadCarFile(ArrayList<Boat> boatStorage) {
+    public static void loadCarFile(ArrayList<Boat> boatStorage) {
 
         ObjectInputStream fromStream = null;
         Boat newBoat;
@@ -197,23 +195,19 @@ public class mainBoat implements Serializable {
                 boatStorage.add(newBoat);
                 newBoat = (Boat)fromStream.readObject();
             }
-            return(true);
         } catch (EOFException e) {
-            return(true);
         } catch (IOException e) {
             System.out.println(e.getMessage());
-            return (false);
         } catch (ClassNotFoundException e) {
             System.out.println(e.getMessage());
-            return(false);
-        }
+            }
+
          finally {
             if (fromStream != null) {
                 try {
                     fromStream.close();
                 } catch (IOException e) {
                     System.out.println(e.getMessage());
-                    return(false);
                 }
             }
         }
