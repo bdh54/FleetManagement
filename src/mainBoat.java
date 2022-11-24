@@ -45,7 +45,7 @@ public class mainBoat implements Serializable {
             }
         } else {
 //---- If no argument file is provided, run method to load in database values
-            loadCarFile(localBoatStorage);
+            loadBoatFile(localBoatStorage);
         }
 //---- Calls menu method
         menu(localBoatStorage);
@@ -216,7 +216,7 @@ public class mainBoat implements Serializable {
     }
 
 //---- Method to load in database file if a csv file is not provided as an argument
-    public static void loadCarFile(ArrayList<Boat> boatStorage) {
+    public static void loadBoatFile(ArrayList<Boat> boatStorage) {
 
         ObjectInputStream fromStream = null;
         Boat newBoat;

@@ -37,7 +37,7 @@ public class Boat implements Serializable {
 //---- Method for setting a new maintenancePrice for the Boat object
     public void setExpense(double expense) {
             maintenancePrice += expense;
-        }
+    }
 
 //---- Gets expense double for Boat object
     public double getExpense() {
